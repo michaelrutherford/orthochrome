@@ -1,6 +1,6 @@
 [package]
 name = "orthochrome"
-description = "Make your photos look like orthochromatic film."
+description = "Simulate orthochromatic film effects on digital images"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
@@ -8,7 +8,7 @@ authors = ["Michael Rutherford"]
 readme = "README.md"
 homepage = "https://github.com/michaelrutherford/orthochrome"
 repository = "https://github.com/michaelrutherford/orthochrome"
-keywords = ["photography", "cli", "film"]
+keywords = ["photography", "cli", "film", "effects"]
 categories = ["command-line-utilities", "multimedia::images"]
 
 [dependencies]
