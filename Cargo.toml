@@ -1,0 +1,17 @@
+[package]
+name = "orthochromatify"
+description = "Make your photos look like orthochromatic film."
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Michael Rutherford"]
+readme = "README.md"
+homepage = "https://github.com/michaelrutherford/orthochromatify"
+repository = "https://github.com/michaelrutherford/orthochromatify"
+keywords = ["photography", "cli", "film"]
+categories = ["command-line-utilities", "multimedia::images"]
+
+[dependencies]
+image="0.25.0"
+imageproc="0.25.0"
+rand="0.8.5"
