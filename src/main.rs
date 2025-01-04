@@ -25,36 +25,27 @@ fn apply_color_filter(image: &mut RgbaImage) {
 // Add random film grain noise to the image and apply a slight blur
 fn add_film_grain(image: &mut RgbaImage) {
     println!("Adding film grain...");
-    
     let mut rng = rand::thread_rng();
 
-    // Iterate through each pixel in the image and apply noise
     for (_x, _y, pixel) in image.enumerate_pixels_mut() {
-        let (r, g, b, a) = (pixel[0] as f32, pixel[1] as f32, pixel[2] as f32, pixel[3]);
+        // Calculate the average pixel brightness
+        let avg = (pixel[0] as f32 + pixel[1] as f32 + pixel[2] as f32) / 3.0;
+        
+        // Reduce noise for extreme values
+        let noise = if avg == 0.0 || avg == 255.0 {
+            rng.gen_range(NOISE_RANGE.clone()) * 0.5
+        } else {
+            rng.gen_range(NOISE_RANGE.clone())
+        };
 
-        // Adjust the noise applied to each color channel
-        let noise_r = adjust_noise(r, rng.gen_range(NOISE_RANGE.clone()));
-        let noise_g = adjust_noise(g, rng.gen_range(NOISE_RANGE.clone()));
-        let noise_b = adjust_noise(b, rng.gen_range(NOISE_RANGE.clone()));
-
-        // Clamp the noisy pixel values to the valid RGB range
-        pixel[0] = (r + noise_r).clamp(0.0, 255.0) as u8;
-        pixel[1] = (g + noise_g).clamp(0.0, 255.0) as u8;
-        pixel[2] = (b + noise_b).clamp(0.0, 255.0) as u8;
-        pixel[3] = a;
+        // Apply noise to each color channel
+        for c in 0..3 {
+            pixel[c] = (pixel[c] as f32 + noise).clamp(0.0, 255.0) as u8;
+        }
     }
 
-    // Apply a slight Gaussian blur to the image
+    // Apply a Gaussian blur to the image to soften the grain
     *image = gaussian_blur_f32(image, 0.5);
-}
-
-// Adjust the noise applied to a color channel by reducing it for extreme values
-fn adjust_noise(channel: f32, noise: f32) -> f32 {
-    if channel == 0.0 || channel == 255.0 {
-        noise * 0.5
-    } else {
-        noise
-    }
 }
 
 // Apply a vignette effect to the image by darkening the corners
