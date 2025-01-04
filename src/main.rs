@@ -7,18 +7,16 @@ use std::path::Path;
 const NOISE_RANGE: std::ops::Range<f32> = -24.2..24.2;
 const VIGNETTE_STRENGTH: f32 = 0.77;
 
-// Apply a cyan filter by reducing the red channel of each pixel
-fn apply_cyan_filter(image: &mut RgbaImage) {
+// Apply cyan filter and reduce image to greyscale
+fn apply_color_filter(image: &mut RgbaImage) {
+    println!("Adding color filter...");
     *image = map_colors(image, |p| {
-        let r = p[0].saturating_sub(90); // Reduce red channel
-        Rgba([r, p[1], p[2], p[3]])
-    });
-}
-
-// Convert image to greyscale by averaging the RGB values
-fn apply_greyscale(image: &mut RgbaImage) {
-    *image = map_colors(image, |p| {
-        let grey = ((p[0] as u32 + p[1] as u32 + p[2] as u32) / 3) as u8; // Average RGB to create greyscale value
+        // Reduce red channel
+        let r = p[0].saturating_sub(90);
+        
+        // Average RGB to create greyscale value
+        let grey = ((r as u32 + p[1] as u32 + p[2] as u32) / 3) as u8;
+        
         Rgba([grey, grey, grey, p[3]])
     });
 }
@@ -92,9 +90,8 @@ fn main() {
     let mut rgba_img = img.to_rgba8();
 
     // Apply the various image filters
-    apply_cyan_filter(&mut rgba_img);
     add_film_grain(&mut rgba_img);
-    apply_greyscale(&mut rgba_img);
+    apply_color_filter(&mut rgba_img);
     apply_vignette(&mut rgba_img);
 
     // Save the modified image with a new filename
