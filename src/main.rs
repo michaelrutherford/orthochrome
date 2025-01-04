@@ -10,6 +10,7 @@ const VIGNETTE_STRENGTH: f32 = 0.77;
 // Apply cyan filter and reduce image to greyscale
 fn apply_color_filter(image: &mut RgbaImage) {
     println!("Adding color filter...");
+    
     *image = map_colors(image, |p| {
         // Reduce red channel
         let r = p[0].saturating_sub(90);
@@ -23,6 +24,8 @@ fn apply_color_filter(image: &mut RgbaImage) {
 
 // Add random film grain noise to the image and apply a slight blur
 fn add_film_grain(image: &mut RgbaImage) {
+    println!("Adding film grain...");
+    
     let mut rng = rand::thread_rng();
 
     // Iterate through each pixel in the image and apply noise
@@ -56,6 +59,8 @@ fn adjust_noise(channel: f32, noise: f32) -> f32 {
 
 // Apply a vignette effect to the image by darkening the corners
 fn apply_vignette(image: &mut RgbaImage) {
+    println!("Adding vignette...");
+
     let (width, height) = image.dimensions();
     let (center_x, center_y) = (width as f32 / 2.0, height as f32 / 2.0); // Image center coordinates
 
