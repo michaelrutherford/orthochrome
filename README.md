@@ -8,6 +8,7 @@ A Rust CLI tool for simulating orthochromatic film effects on digital images.
 - [ ] Improve the performance of the vignette function
 - [ ] Implement command-line flags
 - [ ] Add a function to apply scratches to image
+- [ ] Add parallelism via Rayon
 
 ## License
 orthochrome is released under the MIT License. For more information, see `LICENSE`.
