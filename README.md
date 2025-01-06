@@ -1,14 +1,14 @@
 # orthochrome
 
 ## About
-A Rust CLI tool for simulating orthochromatic film effects on digital images.
+A CLI tool for simulating orthochromatic film effects on digital images.
 
 ## Todo
+- [ ] Rewrite in C++
 - [ ] Improve the performance of the Gaussian blur
 - [ ] Improve the performance of the vignette function
 - [ ] Implement command-line flags
 - [ ] Add a function to apply scratches to image
-- [ ] Add parallelism via Rayon
 - [ ] Upload examples
 - [ ] Improve error handling
 
