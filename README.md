@@ -1,7 +1,7 @@
 # orthochrome
 
 ## About
-A CLI tool for simulating orthochromatic film effects on digital images.
+A tool for simulating orthochromatic film effects on digital images.
 
 ## Todo
 - [ ] Rewrite in Python
