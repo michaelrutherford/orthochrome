@@ -4,7 +4,8 @@
 A CLI tool for simulating orthochromatic film effects on digital images.
 
 ## Todo
-- [ ] Rewrite in C++
+- [ ] Rewrite in Python
+- [ ] Add a GUI
 - [ ] Improve the performance of the Gaussian blur
 - [ ] Improve the performance of the vignette function
 - [ ] Implement command-line flags
