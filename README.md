@@ -8,7 +8,6 @@ A tool for simulating orthochromatic film effects on digital images.
 - [ ] Add a GUI
 - [ ] Improve the performance of the Gaussian blur
 - [ ] Improve the performance of the vignette function
-- [ ] Implement command-line flags
 - [ ] Add a function to apply scratches to image
 - [ ] Upload examples
 - [ ] Improve error handling
