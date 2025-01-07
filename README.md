@@ -1,16 +1,17 @@
 # orthochrome
 
 ## About
-A tool for simulating orthochromatic film effects on digital images.
+A program for simulating orthochromatic film effects on digital images.
 
 ## Todo
-- [ ] Rewrite in Python
-- [ ] Add a GUI
-- [ ] Improve the performance of the Gaussian blur
-- [ ] Improve the performance of the vignette function
+- [x] Rewrite in Python
+- [x] Add a GUI
+- [x] Improve the performance of the Gaussian blur
+- [x] Improve the performance of the vignette function
 - [ ] Add a function to apply scratches to image
 - [ ] Upload examples
 - [ ] Improve error handling
+- [ ] Improve code comments
 
 ## License
 orthochrome is released under the MIT License. For more information, see `LICENSE`.
