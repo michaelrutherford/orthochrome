@@ -1,7 +1,7 @@
 # orthochrome
 
 ## About
-A Python program for simulating orthochromatic film effects on digital images.
+A Python program that simulates orthochromatic film effects on digital images.
 
 ## Todo
 - [x] Rewrite in Python
