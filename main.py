@@ -264,7 +264,7 @@ class ImageProcessorApp(QWidget):
         Opens a save file dialog to allow the user to save the processed image.
         The image is saved at the same resolution as the original.
         """
-        if self.grain_image:
+        if self.vignette_image:
             # Open the save file dialog
             save_path, _ = QFileDialog.getSaveFileName(
                 self,
@@ -279,7 +279,7 @@ class ImageProcessorApp(QWidget):
                     save_path += ".png"  # Default to .png
 
                 # Resize the processed image back to the original size before saving
-                image_to_save = self.grain_image.resize(
+                image_to_save = self.vignette_image.resize(
                     self.original_size, Image.Resampling.LANCZOS
                 )
 
