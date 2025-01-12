@@ -1,7 +1,7 @@
 # silvalide
 
 ## About
-A Python program that simulates film effects on digital images.
+A Python program that simulates analog film effects on digital images.
 
 ## Todo
 - [x] Rewrite in Python
