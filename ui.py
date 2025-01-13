@@ -19,6 +19,7 @@ class ImageEditorUI(QMainWindow):
     """
     A class representing the UI of the program.
     """
+
     def __init__(self, image_processor):
         """
         Initializes the ImageEditorUI with the given image processor.
