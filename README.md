@@ -1,7 +1,7 @@
-# silvalide
+# Silvalide
 
 ## About
-A program to emulate the effects of analog film on digital images.
+Silvalide is a program used to emulate the effects of analog film on digital images.
 It offers a variety of selectable presets, including options for standard, sepia tone, orthochromatic, and infrared film effects.
 Its name comes from the silver halide crystals used in traditional film.
 
@@ -24,4 +24,4 @@ Its name comes from the silver halide crystals used in traditional film.
 - [ ] Improve code comments
 
 ## License
-silvalide is released under the MIT License. For more information, see `LICENSE`.
+Silvalide is released under the MIT License. For more information, see `LICENSE`.
