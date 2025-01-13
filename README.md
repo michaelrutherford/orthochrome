@@ -5,7 +5,10 @@ Silvalide is a program used to emulate the effects of analog film on digital ima
 It offers a variety of selectable presets, including options for standard, sepia tone, orthochromatic, and infrared film effects.
 Its name comes from the silver halide crystals used in traditional film.
 
-## Todo
+## Roadmap
+At present, the program is functional, but lacking in features, customization options, and polish. 
+Below is a list of features that I hope to implement on the road to the 1.0 release.
+
 - [x] Rewrite in Python
 - [x] Add a GUI
 - [x] Improve the performance of the Gaussian blur
