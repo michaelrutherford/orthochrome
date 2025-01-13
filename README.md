@@ -15,6 +15,7 @@ Its name comes from the silver halide crystals used in traditional film.
 - [x] Separate code out into multiple files
 - [ ] Add a function to apply scratches to image
 - [ ] Adjust infrared preset to be smoother
+- [ ] Add RAW file support
 - [ ] Add a normal black and white preset
 - [ ] Add preset manager class
 - [ ] Turn the "Film" preset into a warm, cool, and neutral preset
