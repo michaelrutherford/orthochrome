@@ -9,8 +9,11 @@ A Python program that simulates analog film effects on digital images.
 - [x] Improve the performance of the Gaussian blur
 - [x] Improve the performance of the vignette function
 - [x] Rename the project to reflect a more general purpose
-- [ ] Add additional effects
-- [ ] Add a function to apply scratches to image
+- [x] Add additional effects
+- [ ] Separate code out into multiple files
+- [x] Add a function to apply scratches to image
+- [ ] Adjust infrared preset to be smoother
+- [ ] Add preset manager class
 - [ ] Upload examples
 - [ ] Improve error handling
 - [ ] Improve code comments
