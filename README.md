@@ -9,7 +9,6 @@ Its name comes from the silver halide crystals used in traditional film.
 At present, the program is functional, but lacking in features, customization options, and polish. 
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
-- [ ] Rewrite in C++
 - [x] Add a GUI
 - [x] Improve the performance of the Gaussian blur
 - [x] Improve the performance of the vignette function
