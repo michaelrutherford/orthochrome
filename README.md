@@ -6,7 +6,8 @@ It offers a variety of selectable presets, including options for standard, sepia
 Its name comes from the silver halide crystals used in traditional film.
 
 ## Roadmap
-At present, the program is functional, but lacking in features, customization options, and polish. 
+At present, the program is functional, but lacking in features, customization options, and polish.
+Eventually, I may rewrite this program in C++ for easier distribution, depending on how well the Python version works.
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
 - [x] Add a GUI
