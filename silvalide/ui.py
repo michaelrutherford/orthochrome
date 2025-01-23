@@ -32,7 +32,7 @@ class ImageEditorUI(QMainWindow):
         """
         Sets up the user interface with elements and layouts.
         """
-        self.setWindowTitle("Image Editor")
+        self.setWindowTitle("Silvalide")
         self.setGeometry(100, 100, 1000, 700)
 
         self.image_label = QLabel(self)
