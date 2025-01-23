@@ -9,7 +9,6 @@ Its name comes from the silver halide crystals used in traditional film.
 
 ## Roadmap
 At present, the program is functional, but lacking in features, customization options, and polish.
-Eventually, I may rewrite this program in C++ for easier distribution.
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
 - [x] Add a GUI
@@ -24,9 +23,9 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] Add a normal black and white preset
 - [ ] Add preset manager class
 - [ ] Turn the "Film" preset into a warm, cool, and neutral preset
-- [ ] Upload examples
+- [x] Upload examples
 - [ ] Improve error handling
-- [ ] Improve code comments
+- [x] Improve code comments
 
 ## License
 Silvalide is released under the MIT License. For more information, see `LICENSE`.
