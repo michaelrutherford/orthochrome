@@ -95,7 +95,9 @@ class ImageEditorUI(QMainWindow):
 
         preset_menu = QMenu("Presets", self)
         self.preset_combo = QComboBox(self)
-        self.preset_combo.addItems(["Film", "Orthochromatic", "Sepia", "Infrared"])
+        self.preset_combo.addItems(
+            ["Neutral", "Warm", "Cool", "Orthochromatic", "Sepia", "Infrared"]
+        )
         self.preset_combo.currentIndexChanged.connect(self.apply_preset)
         preset_action = QWidgetAction(self)
         preset_action.setDefaultWidget(self.preset_combo)
@@ -134,7 +136,11 @@ class ImageEditorUI(QMainWindow):
         preset = self.preset_combo.currentText()
         self.image_processor.apply_preset(preset)
 
-        if preset == "Film":
+        if preset == "Neutral":
+            self.reset_sliders()
+        elif preset == "Warm":
+            self.reset_sliders()
+        elif preset == "Cool":
             self.reset_sliders()
         elif preset == "Orthochromatic":
             self.brightness_slider.setValue(100)
