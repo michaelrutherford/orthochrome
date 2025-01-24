@@ -22,7 +22,7 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] Add RAW file support
 - [ ] Add a normal black and white preset
 - [ ] Add preset manager class
-- [ ] Turn the "Film" preset into a warm, cool, and neutral preset
+- [x] Turn the "Film" preset into a warm, cool, and neutral preset
 - [x] Upload examples
 - [ ] Improve error handling
 - [x] Improve code comments
