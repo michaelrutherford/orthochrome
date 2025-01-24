@@ -96,8 +96,12 @@ class ImageProcessor:
         Applies a preset effect to the image.
         """
         self.reset_image()
-        if preset == "Film":
-            self.apply_film_effect()
+        if preset == "Neutral":
+            self.apply_neutral_film_effect()
+        elif preset == "Warm":
+            self.apply_warm_film_effect()
+        elif preset == "Cool":
+            self.apply_cool_film_effect()
         elif preset == "Orthochromatic":
             self.apply_orthochromatic()
         elif preset == "Sepia":
@@ -105,9 +109,23 @@ class ImageProcessor:
         elif preset == "Infrared":
             self.apply_infrared()
 
-    def apply_film_effect(self):
+    def apply_neutral_film_effect(self):
         """
-        Applies a film-like effect to the image, enhancing color and contrast.
+        Applies a neutral film-like effect to the image, enhancing color and contrast.
+        """
+        if self.image:
+            img = self.image.convert("RGB")
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(0.9)  # Slightly reduce color intensity
+            enhancer = ImageEnhance.Brightness(img)
+            img = enhancer.enhance(1.1)  # Slightly increase brightness
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(0.9)  # Slightly reduce contrast
+            self.image = img
+
+    def apply_warm_film_effect(self):
+        """
+        Applies a warm film-like effect to the image, enhancing reds and yellows.
         """
         if self.image:
             img = self.image.convert("RGB")
@@ -116,9 +134,28 @@ class ImageProcessor:
             enhancer = ImageEnhance.Brightness(img)
             img = enhancer.enhance(1.1)
             r, g, b = img.split()
-            r = r.point(lambda p: min(p + 20, 255))
-            g = g.point(lambda p: min(p + 10, 255))
-            b = b.point(lambda p: max(p - 10, 0))
+            r = r.point(lambda p: min(p + 50, 255))
+            g = g.point(lambda p: min(p + 20, 255))
+            b = b.point(lambda p: max(p - 30, 0))
+            img = Image.merge("RGB", (r, g, b))
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(0.9)
+            self.image = img
+
+    def apply_cool_film_effect(self):
+        """
+        Applies a cool film-like effect to the image, enhancing blues and reducing warmth.
+        """
+        if self.image:
+            img = self.image.convert("RGB")
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(0.9)
+            enhancer = ImageEnhance.Brightness(img)
+            img = enhancer.enhance(1.1)
+            r, g, b = img.split()
+            r = r.point(lambda p: max(p - 30, 0))
+            g = g.point(lambda p: min(p + 20, 255))
+            b = b.point(lambda p: min(p + 50, 255))
             img = Image.merge("RGB", (r, g, b))
             enhancer = ImageEnhance.Contrast(img)
             img = enhancer.enhance(0.9)
