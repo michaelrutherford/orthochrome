@@ -1,6 +1,6 @@
 # Silvalide
 
-<img src="assets/screenshot.png" alt="Screenshot" width="500" height="367">
+<img src="docs/screenshot.png" alt="Screenshot" width="500" height="367">
 
 ## About
 Silvalide is a program used to emulate the effects of analog film on digital images.
